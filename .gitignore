@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.DS_Store
+
+# Android
+.gradle/
+local.properties
+.idea/
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+output.json
+
+# Capacitor
+android/app/build/
+android/.gradle/
+android/app/.cxx/
+android/app/src/main/assets/public/

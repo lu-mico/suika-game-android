@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Suika Game Clone</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fceea7;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            touch-action: none; /* Disable default touch actions like scroll/zoom */
+            -webkit-user-select: none; /* Disable text selection */
+            user-select: none;
+        }
+        #game-container {
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background-color: #fff8dc;
+            border-radius: 10px;
+        }
+        #score-board {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            z-index: 10;
+        }
+        #next-fruit {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        #next-fruit::before {
+            content: 'NEXT';
+            position: absolute;
+            top: -15px;
+            font-size: 10px;
+            color: #888;
+        }
+        canvas {
+            display: block;
+            border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="score-board">Score: <span id="score">0</span></div>
+        <div id="next-fruit"><span id="next-preview">🍒</span></div>
+        <!-- Canvas will be injected here by Matter.js -->
+    </div>
+
+    <!-- Matter.js Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
